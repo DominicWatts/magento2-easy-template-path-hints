@@ -38,7 +38,6 @@ class Support extends \Magento\Backend\Block\Template implements \Magento\Framew
         \Magento\Framework\Module\ModuleList\Loader $loader,
         array $data = []
     ) {
-
         parent::__construct($context, $data);
         $this->_metaData = $productMetaData;
         $this->_loader = $loader;

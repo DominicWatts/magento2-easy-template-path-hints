@@ -32,8 +32,8 @@ class DebugHints extends \Magento\Developer\Model\TemplateEngine\Plugin\DebugHin
         TemplateEngineInterface $invocationResult
     ) {
         $storeCode = $this->storeManager->getStore()->getCode();
-        if (( $this->easyPathHintsHelper->shouldShowTemplatePathHints()
-            || $this->scopeConfig->getValue($this->debugHintsPath, ScopeInterface::SCOPE_STORE, $storeCode) )
+        if (($this->easyPathHintsHelper->shouldShowTemplatePathHints()
+            || $this->scopeConfig->getValue($this->debugHintsPath, ScopeInterface::SCOPE_STORE, $storeCode))
             && $this->devHelper->isDevAllowed()
         ) {
             $showBlockHints = $this->scopeConfig->getValue(

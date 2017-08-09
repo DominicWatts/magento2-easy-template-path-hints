@@ -48,7 +48,6 @@ class ControllerActionPredispatch implements ObserverInterface
         }
 
         if ($this->_helper->shouldShowTemplatePathHints()) {
-
             $this->_mutableConfig->setValue(
                 EasypathhintsConfigHelper::XML_PATH_DEBUG_TEMPLATE_FRONT,
                 1,

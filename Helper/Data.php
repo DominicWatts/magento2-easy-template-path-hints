@@ -68,7 +68,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $cookieStatus       = $this->_getRequest()->getParam('cookie', -1);
 
         $checkAccessCode = true;
-        if ( ! empty($dbAccessCode)) {
+        if (! empty($dbAccessCode)) {
             $checkAccessCode = ($dbAccessCode == $accessCode)
                 ? true
                 : false;
@@ -78,12 +78,12 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         if ($dbCookieStatus) {
             if (1 == $cookieStatus) {
                 $this->templateHintCookie->set(1);
-            } else if (0 == $cookieStatus) {
+            } elseif (0 == $cookieStatus) {
                 $this->templateHintCookie->delete();
             }
         }
 
-        if (  ($tp && $checkAccessCode)
+        if (($tp && $checkAccessCode)
             || $this->templateHintCookie->get()
         ) {
             return true;
